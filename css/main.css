@@ -26,6 +26,29 @@ nav{
 }
 .nav_item{
     padding: .6rem;
+    
+}
+.nav_item a{
+    color: var(--primary-color);
+    transition: all 0.3s ease-in;
+}
+.nav_item a:hover{
+    color: var(--fg-color);
+    font: 2rem;
+} 
+.nav_item a::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--fg-color); /* Color of the "underline" */
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease-in; /* Apply the transition to the width property */
+}
+.nav_item a::before:hover{
+    width: 100%;
+
 }
 .social_links{
     display: flex;
@@ -43,14 +66,21 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
-    padding: 7rem;
+    padding: 5rem;
+
+}
+.welcome{
+    font-size: 7rem;
+    font-weight: 100;
 }
 .name{
-    font-size: 7rem;
-    font-weight: 300;
+    font-size: 4rem;
+    font-weight: 100;
 }
 .bio{
     width: 60%;
+    margin-top: 5rem;
+    font-size: 1.5rem;
 }
