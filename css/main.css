@@ -6,6 +6,7 @@
     margin: 0px;
     list-style-type: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 :root{
     --bg-color: #FCFBF8;
@@ -13,7 +14,14 @@
     --primary-color: #71706E;
     --tertiery-color: #CFCFCF;
 }
+html {
+    scroll-behavior: smooth;
+  }  
 header{
+    width: 80%;
+    height: 10%;
+    padding: .7rem;
+    margin:auto;
     font-size: 1.2rem;
 }
 nav{
@@ -32,10 +40,6 @@ nav{
     color: var(--primary-color);
     transition: all 0.3s ease-in;
 }
-.nav_item a:hover{
-    color: var(--fg-color);
-    font: 2rem;
-} 
 .nav_item a::before{
     content: "";
     position: absolute;
@@ -50,37 +54,51 @@ nav{
     width: 100%;
 
 }
+.nav_item a:hover{
+    color: var(--fg-color);
+    font: 2rem;
+} 
 .social_links{
     display: flex;
     align-items: center;
+}
+.social_link{
+    transition: all 200ms ease-in-out;
+}
+.social_link:hover{
+    transform: scale(1.1);
 }
 
 body{
     background-color:var(--bg-color);
     color: var(--fg-color);
-    width: 80%;
+    width: 100%;
     margin:auto;
+    height: 100vh;
 }
-
-.hero{
-    margin: auto;
+.content-area{
+    height: 80%;
+}
+footer{
+    width: 100%;
+    height: 10%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    padding: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+    height: 5rem;
+}
 
-}
-.welcome{
-    font-size: 7rem;
-    font-weight: 100;
-}
-.name{
-    font-size: 4rem;
-    font-weight: 100;
-}
-.bio{
-    width: 60%;
-    margin-top: 5rem;
-    font-size: 1.5rem;
+@media (maxwidth < 54rem) {
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
